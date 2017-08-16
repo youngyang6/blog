@@ -1,4 +1,5 @@
 import os
+import pymysql
 from flask import Flask,render_template,session,url_for,redirect,flash
 from flask_script import Manager
 from flask_bootstrap import Bootstrap
@@ -9,9 +10,10 @@ from wtforms import StringField,SubmitField
 from wtforms.validators import Required
 from flask_mail import Mail,Message
 
+pymysql.install_as_MySQLdb()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456@localhost/mydb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@localhost/mysqldb'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_SERVER'] = 'smtp.163.com'

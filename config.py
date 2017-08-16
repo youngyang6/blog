@@ -19,14 +19,14 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@localhost/mydb'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@localhost/mysqldb'
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@localhost/testdb'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@localhost/testdb'
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@localhost/productdb'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@localhost/productdb'
 
 
 config = {
